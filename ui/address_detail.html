@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address Detail</title>
+</head>
+<body>
+    <h1>Address Details</h1>
+    <p><strong>Street:</strong> A Street</p>
+    <p><strong>Session:</strong> 1</p>
+    <p><strong>Shelf:</strong> 2</p>
+
+    <h2>Items Stored:</h2>
+    <ul>
+        <li>Item 01 - Qty: 10</li>
+        <li>Item 0A - Qty: 5</li>
+    </ul>
+
+    <button onclick="confirmEdit()">Edit</button>
+    <button onclick="confirmDelete()">Delete</button>
+    <button onclick="location.href='view_stock.html'">Back</button>
+
+    <script>
+        function confirmEdit() {
+            if (confirm("Are you sure you want to edit this address?")) {
+                alert("Edit logic here.");
+            }
+        }
+
+        function confirmDelete() {
+            if (confirm("Are you sure you want to delete this address?")) {
+                if (confirm("This action is permanent. Confirm again?")) {
+                    alert("Delete logic here.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+from typing import TYPE_CHECKING
+if TYPE_CHECKING:
+    from product import Product
+    from batch import GeneralBatch
+    from addresses_module import GeneralAddresses
+
+class StockEntry:
+    def __init__(self, name_stock: str, product: "Product", batch: "GeneralBatch", address: "GeneralAddresses", quantity: int):
+        self.name_stock = name_stock
+        self.product = product
+        self.batch = batch
+        self.address = address
+        self.quantity = quantity
+
+    def __repr__(self):
+        return (f"<StockEntry: {self.quantity}x '{self.product.description}' "
+                f"– Lote {self.batch.bcode} @ {self.address.street}/{self.address.session}/{self.address.shelf} "
+                f"| Estoque: {self.name_stock}>")

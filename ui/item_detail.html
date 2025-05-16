@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Detail</title>
+</head>
+<body>
+    <h1>Item Details</h1>
+    <p><strong>Code:</strong> 01</p>
+    <p><strong>Description:</strong> Sample product</p>
+
+    <button onclick="confirmEdit()">Edit</button>
+    <button onclick="confirmDelete()">Delete</button>
+    <button onclick="location.href='view_stock.html'">Back</button>
+
+    <script>
+        function confirmEdit() {
+            if (confirm("Are you sure you want to edit this item?")) {
+                alert("Edit logic here.");
+            }
+        }
+
+        function confirmDelete() {
+            if (confirm("Are you sure you want to delete this item?")) {
+                if (confirm("This action is permanent. Confirm again?")) {
+                    alert("Delete logic here.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

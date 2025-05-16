@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock View</title>
+    <style>
+
+      #itemsList, #addressesList {
+        display: none;
+      }
+    </style>
+</head>
+<body>
+    <h1>Stock: Example Stock</h1>
+    <button onclick="location.href='index.html'">Back</button>
+
+    <div>
+      <button onclick="mostrarLista('itemsList')">Items</button>
+      <button onclick="mostrarLista('addressesList')">Addresses</button>
+    </div>
+
+    <h2 id="itemsHeader" style="display:none;">Items</h2>
+    <ul id="itemsList">
+        <li><a href="item_detail.html?id=1">Item 01</a></li>
+        <li><a href="item_detail.html?id=2">Item 0A</a></li>
+    </ul>
+
+    <h2 id="addressesHeader" style="display:none;">Addresses</h2>
+    <ul id="addressesList">
+        <li><a href="address_detail.html?id=1">Street A / Session 1</a></li>
+    </ul>
+
+    <script>
+      function mostrarLista(listaId) {
+
+        document.getElementById('itemsList').style.display = 'none';
+        document.getElementById('itemsHeader').style.display = 'none';
+        document.getElementById('addressesList').style.display = 'none';
+        document.getElementById('addressesHeader').style.display = 'none';
+
+
+        document.getElementById(listaId).style.display = 'block';
+        if(listaId === 'itemsList') {
+          document.getElementById('itemsHeader').style.display = 'block';
+        } else if (listaId === 'addressesList') {
+          document.getElementById('addressesHeader').style.display = 'block';
+        }
+      }
+    </script>
+</body>
+</html>
