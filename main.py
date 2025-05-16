@@ -1,10 +1,19 @@
 import webview
-import os
+from api import Api
 
-def start_app():
-    path = os.path.abspath("ui/index.html")
-    window = webview.create_window("Stock Manager", path, width=1000, height=700)
-    webview.start()
+def main():
+    api = Api()  
 
-if __name__ == "__main__":
-    start_app()
+    window = webview.create_window(
+        "Inventory Manager",
+        "ui/index.html",  
+        js_api=api,
+        width=800,
+        height=600,
+        resizable=True
+    )
+
+    webview.start(debug=False)  
+
+if __name__ == '__main__':
+    main()

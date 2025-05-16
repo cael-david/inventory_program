@@ -6,14 +6,6 @@ def recreate_database():
     conn = sqlite3.connect(DB_NAME)
     conn.execute('PRAGMA foreign_keys = ON')  # Habilita FK
     cursor = conn.cursor()
-
-    # Apaga as tabelas existentes na ordem correta
-    cursor.execute('DROP TABLE IF EXISTS stock_entries')
-    cursor.execute('DROP TABLE IF EXISTS stocks')
-    cursor.execute('DROP TABLE IF EXISTS products')
-    cursor.execute('DROP TABLE IF EXISTS batches')
-    cursor.execute('DROP TABLE IF EXISTS addresses')
-
     # Cria tabela de estoques (stocks)
     cursor.execute('''
     CREATE TABLE stocks (
